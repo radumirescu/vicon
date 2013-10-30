@@ -14,6 +14,7 @@ def ViconProject(name: String): Project = (
     version := "1.0",
     organization := "ro.ims",
     libraryDependencies += "org.specs2" % "specs2_2.10" % "1.14" % "test"
+    libraryDependencies += "com.jsuereth" %% "scala-arm" % "1.3"
   )  
 )
 

@@ -1,5 +1,5 @@
 import scala.io.Source
-
+import resource._
 /**
  * Created by: Radu Mirescu (radu@neodonis.com)
  * Date: 30.10.2013
@@ -7,11 +7,11 @@ import scala.io.Source
  */
 class CsvLoader(fileToInterpret: String) {
   def process() {
-    val bufferedSource = Source.fromFile(fileToInterpret)
-    for (line <- Source.fromFile(fileToInterpret).getLines) {
-      println( "> %s".format(line))
+    for (source <- managed(Source.fromFile(fileToInterpret))) {
+      for( line <- source.getLines ) {
+        println( "> %s".format(line))
+      }
     }
-    bufferedSource.close()
   }
 }
 
