@@ -13,14 +13,16 @@ STUDIU
 * lista markeri Vicon
 * gasit articol privind documentatia unghiurilor
 * studiu amanuntit articol markeri
-* cautat articol pozitie cupa acetabulara - cap femural
 * studiat toti termenii folositi (pt dialog cu profesorul)
 * studiu documentatie IMF
 * studiu documentatie Pf. Vladareanu
-* date antropometrice - estimare forte pe baza lor
+* studiu documentatie dropbox
+    * date antropometrice - estimare forte pe baza lor
 
 EXPLORARE
 =========
+* cautat articol pozitie cupa acetabulara - cap femural
+
 * mod in care sunt stocate informatiile brute colectate de Vicon
     ? modalitate de operare mai rapida (mod inteligent de definire euristica?)
 
