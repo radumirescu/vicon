@@ -30,6 +30,7 @@ class CsvLoader(fileToInterpret: String) {
       }
       val animation = Animation.buildAnimation()
       animation.dump()
+      animation.show()
     }
   }
 
