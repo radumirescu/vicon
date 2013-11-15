@@ -14,6 +14,21 @@ class Animation( cnt : List[MomentSlice]) {
     }
     println("END ANIMATION")
   }
+
+  def processingStartup() {
+
+  }
+
+  def processingRun() {
+
+  }
+
+  def computeBoxDimension() : (Double,Double,Double,Double,Double,Double) = {
+    val first = true
+    for( moment <- cnt ) {
+      var dims = if( first ) moment.dimensions() else moment.adjustDimensions( dims )
+    }
+  }
 }
 
 object Animation {
