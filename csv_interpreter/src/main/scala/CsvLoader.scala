@@ -18,16 +18,11 @@ class CsvLoader(fileToInterpret: String) {
           val parts = line.split(",").toList
           if( parts.size > 240 ) {
             rowsNb += 1
-            val moment = parts.head
+            val moment = parts.head.toInt
             val rowInfo = packRowInfo(infoLabels,parts.tail,Map[String,(String,String,String)]())
-            val momentSlice : MomentSlice = MomentSlice.makeMomentSlice( rowInfo )
+            val momentSlice : MomentSlice = MomentSlice.makeMomentSlice( moment, rowInfo )
             momentSlice.dump()
           }
-          //dumpRowInfo( rowInfo )
-          for ((part, idx) <- parts.zipWithIndex) {
-            println("%03d : %s".format(idx, part))
-          }
-          return
         } else if (line startsWith "Field #,X,Y,Z") {
           loadData = true
         } else if (line startsWith ",LASI,,,") {

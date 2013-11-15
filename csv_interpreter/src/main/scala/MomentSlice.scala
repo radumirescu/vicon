@@ -7,8 +7,9 @@ import scala.collection.mutable
  * Time: 02:09
  * To change this template use File | Settings | File Templates.
  */
-class MomentSlice(cnt: Map[String, LblInfo]) {
+class MomentSlice(moment:Int, cnt: Map[String, LblInfo]) {
   def dump() {
+    println("Moment: %d".format(moment))
     for( key <- cnt.keys ) {
       cnt(key).dump()
     }
@@ -16,7 +17,7 @@ class MomentSlice(cnt: Map[String, LblInfo]) {
 }
 
 object MomentSlice {
-  def makeMomentSlice(info: Map[String, (String, String, String)]) : MomentSlice = {
+  def makeMomentSlice(moment:Int, info: Map[String, (String, String, String)]) : MomentSlice = {
     val collector = mutable.Map[String,LblInfo]()
 
     for( key <- info.keys ) {
@@ -28,6 +29,6 @@ object MomentSlice {
       collector += ( key -> new LblInfo(key,x,y,z))
     }
 
-    new MomentSlice( Map.empty ++ collector )
+    new MomentSlice( moment, Map.empty ++ collector )
   }
 }
