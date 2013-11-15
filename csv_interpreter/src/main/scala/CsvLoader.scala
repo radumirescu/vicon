@@ -20,8 +20,7 @@ class CsvLoader(fileToInterpret: String) {
             rowsNb += 1
             val moment = parts.head.toInt
             val rowInfo = packRowInfo(infoLabels,parts.tail,Map[String,(String,String,String)]())
-            val momentSlice : MomentSlice = MomentSlice.makeMomentSlice( moment, rowInfo )
-            momentSlice.dump()
+            Animation.receiveNewMomentSlice( MomentSlice.makeMomentSlice( moment, rowInfo ) )
           }
         } else if (line startsWith "Field #,X,Y,Z") {
           loadData = true
@@ -29,6 +28,8 @@ class CsvLoader(fileToInterpret: String) {
           infoLabels = line.substring(1).split(",,,").toList
         }
       }
+      val animation = Animation.buildAnimation()
+      animation.dump()
     }
   }
 
